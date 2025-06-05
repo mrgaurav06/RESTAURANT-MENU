@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.background {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Splash Logo */
+.logo {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  animation: fadeOut 2s ease-in-out 3s forwards;
+}
+
+.logo img {
+  width: 180px;
+  height: auto;
+  border-radius: 45%;
+  animation: pop 1.5s ease-in-out;
+  filter: drop-shadow(0 0 15px #ffcc00);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+/* Menu Container */
+.menu {
+  padding: 2rem 1rem;
+  display: none;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #fff700a6;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffbb00;
+  text-shadow: 0 0 8px #ff8c00;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 0.5rem;
+}
+
+/* Horizontal Scroll Frame */
+.scroll-frame {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.food-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.food-card {
+  background: #1c1c1c;
+  border-radius: 15px;
+  width: 180px;
+  min-width: 180px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 15px #ffcc00a2;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.food-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.food-card p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.food-card span {
+  display: block;
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+}
+
+/* Scrollbar Styling */
+.scroll-frame::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-frame::-webkit-scrollbar-thumb {
+  background-color: #ffcc00;
+  border-radius: 5px;
+}
+
+/* ------------------- */
+/* Responsive Changes  */
+/* ------------------- */
+
+@media (max-width: 600px) {
+  .menu-title {
+    font-size: 1.8rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .food-card {
+    width: 150px;
+    min-width: 150px;
+  }
+
+  .food-card img {
+    height: 100px;
+  }
+
+  .food-card p {
+    font-size: 0.9rem;
+  }
+
+  .food-card span {
+    font-size: 1rem;
+  }
+
+  .splash img {
+    width: 140px;
+  }
+  .logo {
+  height:110vh;
+  display: flex;
+  margin-left: 50px;
+  border-radius: 45px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  animation: fadeOut 2s ease-in-out 3s forwards;
+}
+}
